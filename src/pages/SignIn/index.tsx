@@ -49,17 +49,17 @@ const SignIn: React.FC = () => {
         password: data.password,
       });
 
-     
+
 
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
 
         formRef.current?.setErrors(errors);
-        
+
         return;
       }
-     
+
       console.log(err)
 
       Alert.alert('Erro na autenticação', 'Ocorreu um erro ao fazer login, cheque as credenciais')
@@ -89,7 +89,7 @@ const SignIn: React.FC = () => {
                 keyboardType="email-address"
                 name="email"
                 icon="mail"
-                placeholder="Email"
+                placeholder="E-mail"
                 returnKeyType="next"
                 onSubmitEditing={() => {
                   passwordInputRef.current?.focus()
